@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+{% extends "front_templates/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block head_title %} CMU | {{ block.super }} {% endblock %}
+
+{% block styles %}
+<style>
+    
+/*Whtie gap erase*/
+html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+  .navbar {
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
+  }
+  .navbar-inverse .navbar-brand, .navbar-brand:hover {
+    color: white;
+  }
+      .nopad-row {
+        text-align:center;
+        background-color:white;
+        min-height:200px;
+        border-bottom: 1px solid #EEE;
+      }
+    .navbar-inverse {
+      background-color:rgba(0, 135, 68,0.9)!important;
+      border-color: #E47541 !important;
+    }
+    .jumbotron {
+     padding-top: 10px;
+       margin-bottom: 0px !important;
+   
+    }
+
+     .jumbotron h1{
+     	font-weight: 100;
+      color: white;
+      
+     }  
+     .jumbotron p{
+     	font-weight: 100;
+     	font-size: 20px;
+      color: #c9e4d6;
+     font-family: 'Montserrat', sans-serif;
+     }
+   
+     .voffset  { margin-top: 2px; }
+	.voffset1 { margin-top: 5px; }
+	.voffset2 { margin-top: 10px; }
+	.voffset3 { margin-top: 15px; }
+	.voffset4 { margin-top: 30px; }
+	.voffset5 { margin-top: 40px; }
+	.voffset6 { margin-top: 60px; }
+	.voffset7 { margin-top: 80px; }
+	.voffset8 { margin-top: 100px; }
+	.voffset9 { margin-top: 150px; }
+	.hoffset  { margin-left: 20px; }
+	.hoffset1 { margin-left: 50px; }
+	.hoffset2 { margin-left: 100px; }
+	.hoffset3 { margin-left: 150px; }
+	.hoffset4 { margin-left: 300px; }
+	.hoffset5 { margin-left: 400px; }
+	.hoffset6 { margin-left: 600px; }
+	.hoffset7 { margin-left: 800px; }
+	.hoffset8 { margin-left: 1000px; }
+	.hoffset9 { margin-left: 1500px; }
+	.hroffset  { margin-right: 20px; }
+	.hroffset1 { margin-right: 50px; }
+	.hroffset2 { margin-right: 100px; }
+	.hroffset3 { margin-right: 150px; }
+	.hroffset4 { margin-right: 300px; }
+	.hroffset5 { margin-right: 400px; }
+	.hroffset6 { margin-right: 600px; }
+	.hroffset7 { margin-right: 800px; }
+	.hroffset8 { margin-right: 1000px; }
+	.hroffset9 { margin-right: 1500px; }
+.circlepicture
+{
+    width: 200px; // These are your circle dimensions
+    height: 200px;
+    border-radius: 50%;
+    background-repeat: no-repeat; 
+    background-position: center center; // Center image in the circle
+    background-size: cover; // Make sure it covers the circle, as there is no bg repeat
+}
+.profile{
+   max-width: 70%;
+   max-height: 70%
+}
+.rilogo1{
+   max-width: 40%;
+   max-height: 40%
+}
+.rilogo2{
+   max-width: 100%;
+   max-height: 100%
+}
+.rilogo3{
+   max-width: 120%;
+   max-height: 120%
+}
+.centerz {  /* DEBUGGING PURPOSE*/
+    margin: auto;
+    width: 50%;
+    border:3px solid #8AC007;
+   
+}
+.img-center {margin-left: auto;
+			margin-right:auto;}
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+.jumbotron h2{
+      font-weight: 100;
+      font-size: 20px;
+      color: #c9e4d6;
+      font-family: 'Montserrat', sans-serif;
+     }
+    
+</style>
+{% endblock %}
+
+  
+<html>
+{% block content %}
+<div class= "jumbotron" style='background-color: #3b4998' >
+	<div class= "container-fluid" >
+		<div class= "row">
+			<!-- <div class= "text-center"> -->
+			<div class= "col-xs-12 col-md-6">
+				<img src="{% static 'img/doge.png' %}" class="img-responsive img-center profile img-circle voffset7 fa-spin">
+			</div>
+			<div class= "col-xs-12 col-md-6">
+				<!-- <div class="jumbotron"> -->
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+<!-- 		        	<h2>John C. Pyun </h2> -->
+		        	<br/>
+			        <h1 class= "fa-pulse">Carnegie Mellon University Emergency Medical Service</h1>
+			        <p>	
+			        <!-- <img src="{% static 'img/me.jpg' %}" class="profile img-circle"> -->
+			      
+			        <a class="btn btn-lg btn-primary fa-spin" href="http://wheelofdick.com" role="button">WOW</a>
+			        </p>
+
+			   <!--  </div> -->
+			</div>
+			
+			<!-- <div class= 'col-sm-6' style= "background-color: black; height:315px; "> -->
+
+		</div>
+	</div>
+</div>
+
+
+<div class="parallax-window" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="{% static 'img/ryan.jpg' %}" ></div>
+
+<!-- ######################################
+############################################
+##              AFTER LOGGING IN           ##
+############################################
+############################################ -->
+
+
+
+<!-- ################### PARALLAX STARTS HERE 	################################# -->
+
+
+
+
+
+<div class= "jumbotron img-fade" style='background-color: #3FAD38' >
+  <div class= "container-fluid" >
+    <div class= "row">
+      <div class= "col-xs-12 col-md-6 text-center ">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+
+              <br/>
+              <h1>WOW TEXT HERE</h1>
+              <br/>
+              <br/>
+              <p>SUCH PLACE HOLDER </p>
+              <div class= "col-xs-6 col-md-6">
+                <img src="{% static 'img/ri.gif' %}" class="img-responsive img-center rilogo1">
+              </div>
+              
+              <div class= "col-xs-4 col-md-6">
+                <br/>
+                <br/>
+                <img src="{% static 'img/cmursi.gif' %}" class="img-responsive img-center rilogo3"> 
+              </div>
+      </div>
+
+      <div class= "col-xs-12 col-md-6">
+        <img src="{% static 'img/emslogo.png' %}" class="img-responsive img-center profile img-circle voffset7">
+      </div>
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="parallax-window" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="{% static 'img/lol.jpg' %}" ></div>
+
+<!-- <div class="parallax-window" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="{% static 'img/hh.jpg' %}" data-natural-width="1400" data-natural-height="500"></div> -->
+
+
+<style>
+.cplus{
+   max-width: 40%;
+   max-height: 40%
+}
+.django{
+   max-width: 40%;
+   max-height: 40%
+}
+</style>
+<div class= "jumbotron img-fade" style='background-color: #990000' >
+  <div class= "container-fluid" >
+    <div class= "row">
+       <div class= "col-xs-12 col-md-6">
+        <img src="{% static 'img/alexa.jpg' %}" class="img-responsive img-center profile img-circle voffset7 fa-spin">
+      </div>
+      <div class= "col-xs-12 col-md-6">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+              <br/>
+              <h1>MOAR PLACE HOLDER</h1>
+              <br/>
+              <br/>
+              <p>I HAVE NO IDEA WHAT IM DOING
+                </p>
+                
+              
+                       
+      </div>
+      
+
+      <!-- <div class= "col-xs-3 img-center">
+        <img src="{% static 'img/html_logo.png' %}" class="img-responsive  ">
+      </div>
+      <div class= "col-xs-3 img-center">
+        <img src="{% static 'img/javascript_logo.png' %}" class="img-responsive  ">
+      </div>
+      <div class= "col-xs-3 img-center">
+        <img src="{% static 'img/cplusplus_logo.png' %}" class="img-responsive cplus">
+      </div>
+      <div class= "col-xs-3 img-center">
+        <img src="{% static 'img/django_logo.png' %}" class="img-responsive django  ">
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+<div class="parallax-window" data-parallax="scroll" data-position="middle" data-bleed="100" data-image-src="{% static 'img/pauschnight.jpg' %}" ></div>
+
+
+<div class='row nopad-row' style='background-color: #FFFF00'>
+
+    <h1> WOW </h1>
+    <div class = "col-sm-12">
+    <i class="fa fa-envelope fa-4x"></i> <br/>
+    <i class="fa fa-phone-square fa-4x"></i> 
+  </div>
+   
+
+</div>
+
+
+
+
+
+
+<!-- ################### PARALLAX ENDS HERE 		################################# -->
+
+
+{% endblock %}
+</html>

@@ -8,3 +8,9 @@ def home(request):
 	context={
 	}
 	return render(request, template, context)
+	
+def landing(request):
+	template= "front_templates/landinghome.html"
+	context={
+	}
+	return render(request, template, context)

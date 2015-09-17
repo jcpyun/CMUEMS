@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+{% extends "front_templates/landingbase.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block head_title %} test{{ block.super }} {% endblock %}
+
+<style>
+{% block style %}
+body {
+  min-height: 100px;
+}
+body {
+	padding-top: 0px !important;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #000;
+}
+.navbar-static-top{
+	margin-bottom: 0px !important;
+}
+.jumbotron{
+	background-color:#990000;
+	color: #FFF;
+	margin-bottom: 10px !important;
+}
+.nopadding {
+   padding-left: 0 !important;
+   padding-right: 0 !important;
+   margin: 0 !important;
+}
+.jumbotron p{
+     	font-weight: 100;
+     	font-size: 15px;
+      color: #fff;
+      font-family: 'Varela Round', sans-serif;
+     }
+  .jumbotron h2{
+     	font-weight: 100;
+     	font-size: 10px;
+      color: #c9e4d6;
+      font-family: 'Varela Round', sans-serif;
+     }
+  .parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+.logbody{
+	background-color: #c9e4d6;
+}
+.img-center {margin-left: auto;
+			margin-right:auto;}
+
+.randypic{
+   max-width: 50%;
+   max-height: 50%
+}
+.bridgepic{
+   max-width: 80%;
+   max-height: 80%
+}
+.jumbotron h3{
+     	font-weight: 100;
+     	font-size: 30px;
+      color: #FFF;
+      font-family: 'Varela Round', sans-serif;
+     }
+{% endblock %}
+</style>
+  
+<html>
+{% block jumbotron %}
+{% if not request.user.is_authenticated %}
+<div class= "jumbotron" >
+	<div class= "container" >
+		<div class= "row">
+			<div class= "col-sm-6 text-center">
+				<img src="{% static 'img/emspng.png' %}" class=" img-fade img-center"></h1>
+			</div>
+
+			<div class= "col-md-6">
+				<!--register <div class="jumbotron"> -->
+
+		        	<br/>
+		        	<br/>
+		        	<h1> Emergency? </h1>
+		        	<p> Call Campus Police</p>
+			        <h3><i class="fa fa-phone-square fa-lg"></i>&nbsp;&nbsp;412.268.2323</h3>
+			        <p>
+			        	Help is on the way.
+			        </p>
+			        <p>
+			        	CMU EMS serves the medical needs of the Carnegie Mellon campus community 24-7. It is an all-volunteer, 100% student-run quick response service. </br> 
+			        </br>
+						CMU EMS is a proud member of the<a href ="https://www.ncemsf.org/"> National Collegiate Emergency Medical Services Foundation</a>.</p>
+
+			        </p>
+
+			        <br/>
+			       
+			        <p>
+			        </p>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+{% endif %}
+{% endblock %}
+
+
+<!-- ######################################
+############################################
+
+##              AFTER LOGGING IN           ##
+
+############################################
+############################################ -->
+
+{% block content %}
+{% if request.user.is_authenticated %}
+<div class="container-fluid">
+<h1> Welcome {{ request.user }}! This is your homescreen </h1>
+<div class= "nopadding">
+{% include 'homepage_templates/catparallax.html' %}
+</div>
+
+{% if queryset %}
+<h2> Welcome Staff </h2>
+
+
+<table class='table'>
+	{% for instance in queryset %}
+	<tr><td>{{ forloop.counter}} </td><td>{{ instance }}</td><td>{{ instance.full_name }}</td><td>{{ instance.timestamp|timesince }} ago<td></tr>
+<!-- {% for instance in queryset %}
+	{{ instance }},{{ instance.full_name }} <br/>
+{% endfor %} -->
+{% endfor %}
+</table>
+
+{{ queryset }}
+</div>
+{% endif %}
+
+
+<!--#####################################################
+######################################################
+
+ ###                BEFORE LOGGING IN               ##
+
+#########################################################
+#######################################################-->
+
+{% else %}
+
+<div class="parallax-window" data-parallax="scroll" data-position="middle" data-bleed="100" data-image-src="{% static 'img/pauschnight.jpg' %}" ></div>
+
+
+{% endif %}
+{% endblock %}
+</html>
+

@@ -17,7 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-
+ 
 from django.views.generic.base import TemplateView
 from registration.backends.default.views import ActivationView
 from registration.backends.default.views import RegistrationView
@@ -25,5 +25,8 @@ from dashing.utils import router
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^landing$', 'front.views.landing',name='landing'),
     url(r'^$', 'front.views.home',name='home'),
+    url(r'^accounts', include('registration.backends.default.urls')),
+    url(r'^dashboard', include(router.urls)),
 ]
