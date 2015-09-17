@@ -1,0 +1,65 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!-- 
+
+##################################################
+##################################################
+
+WOW AREN'T YOU A HAX0R!
+YOU ARE SO GOOD AT FINDING THE PAGE SOURCE! 
+
+
+No But seriously. Why do you have to go through 
+my page source and hurt my feelings :(
+
+stahp please.
+
+
+##################################################
+##################################################
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'img/ultron_logo.png' %}">
+
+    <title>{% block head_title %}Ultron{% endblock %}</title>
+
+    {% include "front_templates/head_css.html" %}
+  </head>
+
+  <body>
+    {% include 'front_templates/navbar.html' %}
+
+      {% block content %}
+
+      {% endblock %}
+
+
+<div class="row" style= "margin-top:80px; background-color:grey;">
+      <div class="container" style= 'text-align:center; padding:20px;'>
+      <footer>
+        <p>&copy;WAUUUU 2015</p>
+      </footer>
+    </div> 
+</div>
+    {% block styles %}
+    {% endblock %}
+   {% include 'front_templates/javascript.html' %}
+    <script>
+    $(document).ready(function(){
+      {% block jquery %}
+      {% endblock %}
+    });
+    </script>
+  </body>
+</html>
+
+
+</body>
+</html>

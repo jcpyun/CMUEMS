@@ -1,0 +1,260 @@
+{% extends "front_templates/base.html" %}
+{% load staticfiles %}
+
+{% block styles %}
+<style>
+     body {
+      background: url('{% static "img/background_nasa.png" %}') no-repeat center center fixed;
+
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      /*background-image: url('{% static "img/beach.jpg" %}');*/
+    /*  background-repeat: repeat-x;*/
+
+
+     }
+     html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+
+
+    body {
+/*    padding-top: 0px;*/
+    padding-bottom: 0px;
+  }
+  .navbar {
+    margin-bottom: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  .navbar-inverse .navbar-brand, .navbar-brand:hover {
+    color: white;
+  }
+
+    .featured-row {
+        text-align:center;
+        background-color:white;
+        min-height:200px;
+        padding:40px 0;
+        border-bottom: 1px solid #EEE;
+      }
+    .navbar-inverse {
+      background-color:#008744!important;
+      border-color: #E47541 !important;
+    }
+    .jumbotron {
+     padding-top: 3px;
+    padding-bottom: 3px;
+    }
+
+     .jumbotron h1{
+     	font-weight: 100;
+      color: white;
+
+     }
+     .jumbotron p{
+     	font-weight: 100;
+     	font-size: 30px;
+      color: white;
+     }
+     .pic-fill{
+
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: contain;
+     }
+     .img-center {margin-left: auto;
+      margin-right:auto;}
+      .profile{
+   max-width: 70%;
+   max-height: 70%
+}
+.voffset7 { margin-top: 80px; }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="jumbotron" style='background-color: #3b5998'>
+      <div class="container">
+        <div class= 'col-sm-6'>
+        <h1 class="cover-heading img-fade">Carnegie Mellon University Emergency Medical Service</h1>
+        <p  class="img-fade" style= "font-size:120%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wau </p>
+        <p  class="img-fade" style= "font-size:120%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Many Service</p>
+        <p  class="img-fade" class="img-fade">wowowowowow</p>
+        <h3 class="img-fade">&nbsp;&nbsp;&nbsp; scroll down for more information! </h3>
+        <br/>
+        <br/>
+        <p><a class="btn btn-success btn-lg img-fade" href="http://wheelofdick.com"  role="button">Don't Click This! &raquo;</a></p>
+        </div>
+<!-- <video id="promo-video" loop="loop" muted="muted" poster="https://d3nn82uaxijpm6.cloudfront.net/assets/website/video/run_with_us-poster-ea2611d0b9f378ca4966bcfd12fa5cc5.jpg" preload="preload" width="100%"> <source src="https://dmap5nnpoyml1.cloudfront.net/videos/run_with_us_teaser.mp4" type="video/mp4"> </video> -->
+        <div class='col-sm-6'>
+          <img src="{% static 'img/doge.png' %}" class='img-responsive img-center profile img-center voffset7 img-fade' />
+       
+      </div>
+      </div>
+    </div>
+<br/>
+<br/>
+<!-- <hr/> -->   <!-- THIS CREATES LINES  -->
+
+
+
+<div class='container' style='text-align:center;color:black; font:bold;' id="signup" >
+<div class='col-sm-6 col-sm-offset-3'>
+<br/>
+<br/>
+<br/>
+<i class="fa fa-unlock fa-5x"></i>
+  <h1>Get Google Ultron Now!</h1>
+
+  <form class='form-horizontal' method="POST" action=""> {% csrf_token %}
+    <div class='form-group form-group-lg'>
+    {% if form.email.errors %}
+     {% for err in form.email.errors %}
+     <div class="alert alert-danger" role="alert">{{ err }}</div>
+    <div class="alert alert-danger" role="alert">Your Email is required</div>
+    {% endfor %}
+    {% endif %}
+     
+          <div class="input-group">
+        <input class='form-control' type="email" name="email" placeholder="Your email..." />
+            <span class='input-group-btn'>
+          <input type='submit' value='Join' class='btn btn-primary btn-lg' />
+          </span>
+        </div>
+    </div>
+  </form>
+  <p class='lead'>Sign up here. <br/>Get the early access for Google Ultron!</p>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+<br/>
+<br/>
+
+</div>
+
+
+</div>
+
+ 
+<div class='row featured-row'>
+  <div class='col-sm-12'>
+   
+  
+    <div class='col-md-4 col-md-offset-4'>
+    <!-- <div class='col-sm-3 col-sm-offset-3'> -->
+     <img src="{% static 'img/ultron_logo.png' %}"  height='70' width= '70' aligh='middle'/>
+      <h2>Ultron</h2>
+ 
+      <p class='lead'>
+      Don't use Google Chrome. 
+      Use Google Ultron.
+      </p>
+    
+
+
+
+  </div>
+
+</div>
+
+
+
+<div class='row featured-row'>
+  <div class='col-sm-12'>
+   
+    <div class='col-sm-3'>
+      <a href= "nasa.gov"><img src="{% static 'img/nasa.png' %}"  height='70' width= '85' aligh='middle'/> </a>
+      <h2>NASA</h2>
+      <p class='lead'>
+      Chrome Ultron is used by NASA
+      </p>
+    </div>
+    <div class='col-sm-3'>
+      <a href= "https://get.adobe.com/reader/otherversions/"><img src="{% static 'img/adobe.png' %}"  height='70' width= '70' aligh='middle'/></a>
+      <h2>Adobe Reader</h2>
+      <p class='lead'>
+      Adobe Reader powers Ultron's structural integrity.
+      </p>
+    </div>
+    <div class='col-sm-3'>
+      <a href= "http://windows.microsoft.com/en-us/internet-explorer/download-ie"><img src="{% static 'img/explorer.png' %}"  height='70' width= '70' aligh='middle'/></a>
+      <h2>Downloading Ultron</h2>
+      <p class='lead'>
+      Internet Explorer is best used to download Google Ultron
+      </p>
+    </div>
+    <div class='col-sm-3'>
+      <img src="{% static 'img/astronaut.png' %}"  height='70' width= '70' aligh='middle'/>
+      <h2>Zero Gravity</h2>
+      <p class='lead'>
+      Google Ultron works in Zero Gravity!
+      That is why NASA uses it!
+      </p>
+    </div>
+
+
+  </div>
+
+</div>
+
+<div class='row featured-row'>
+  <div class='col-sm-12'>
+    <div class='col-sm-3'>
+        <a href = "www.facebook.com"><i class="fa fa-facebook fa-5x" style="color:#3b5998;"></i>
+        <h2>Facebook</h2></a>
+        <p class='lead'>
+        Spend $2000 on your macbook and use it to browse Facebook!
+        </p>
+      </div>
+      <div class='col-sm-3'>
+         <a href="https://github.com/jcpyun"><img src="{% static 'img/bitcoin.png' %}"  height='70' width= '70' aligh='middle'/> </a>
+        <h2>Bitcoin</h2>
+        <p class='lead'>
+        Why use Bitcoin? have you tried Dogecoin?
+        </p>
+      </div>
+      <div class='col-sm-3'>
+        <img src="{% static 'img/doge.png' %}"  height='70' width= '70' aligh='middle'/>
+        <h2>Doge</h2>
+        <p class='lead'>
+        Is it pronounced Doje? or Doge? Is .gif pronounced jif? or gif?... wow
+        </p>
+      </div>
+      <div class='col-sm-3'>
+        <a class="fa fa-github fa-5x" href="https://github.com/jcpyun"></a>
+        <h2>Github</h2>
+        <p class='lead'>
+        Follow me on Github!
+        https://github.com/jcpyun
+        </p>
+      </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class= "row" style='text-align:center; background-color:white; margin: 80px 0px; min-height: 200px;'>
+	<div class='col-sm-12'>
+		<h2> hello </h2>
+	</div>
+</div>
+ -->
+
+{% endblock %}
+

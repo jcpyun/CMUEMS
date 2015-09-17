@@ -1,0 +1,174 @@
+{% extends "front_templates/base.html" %}
+{% load staticfiles %}
+
+{% block styles %}
+<style>
+.jumbotron {
+     padding-top: 3px;
+    padding-bottom: 3px;
+    }
+</style>
+{% endblock %}
+
+<!-- YAY JQUERY!!!! -->
+{% block jquery %}
+<!-- alert('hello'); -->
+$('#count5').css({
+    'background-image': 'none',
+    'background-color': 'teal'
+});
+
+$signUpCount = {{ count }};
+
+function completeBlock(progressBarId)
+{
+	$(progressBarId).css("width","100%").attr("aria-valuenow","100").text("Completed");		
+}
+function zeroBlock(progressBarId)
+{
+	$(progressBarId).css("width","0%").attr("aria-valuenow","0").text("0");		
+}
+
+function setNewPerc(progressBarId, percentNumber, newText)
+{
+	$(progressBarId).css("width",percentNumber+"%").attr("aria-valuenow",percentNumber).text(newText);
+	//$("#count15").css("width",$newPercent+"%").attr("aria-valuenow",$newPercent).text($newPercent+"%");
+}
+
+if($signUpCount ==0){
+	zeroBlock("#count5")
+	zeroBlock("#count15")
+	zeroBlock("#count25")
+	zeroBlock("#count50")
+}
+
+
+else if($signUpCount > 0 && $signUpCount<1)
+{
+	$newPercent= $signUpCount/5*100;
+	setNewPerc("#count5",$newPercent,"Number of Friends " + $signUpCount)
+	//$("#count5").css("width",$newPercent+"%").attr("aria-valuenow",$newPercent).text($newPercent+"%");
+}
+else if($signUpCount>=1 && $signUpCount < 2) 
+{
+	completeBlock("#count5");
+	$newCount= $signUpCount-5;
+	$newPercent= $newCount/10*100;
+	$("#count15").css("width",$newPercent+"%").attr("aria-valuenow",$newPercent).text($newPercent+"%");
+
+}
+else if($signUpCount>=2 && $signUpCount <3)
+{
+	completeBlock("#count5");
+	completeBlock("#count15");
+}
+
+
+
+{% endblock %}
+<!-- JQUERY ABOVE -->
+{% block content %}
+
+
+<div class="jumbotron" style='background-color: grey'>
+	<div class="container">
+		<div class= 'row'>
+			<div class= 'col-md-6 pull-right' style='text-align:center;'>
+				<i class="fa fa-share-alt-square fa-5x"></i>
+				<h1>Invite your friends!</h1>
+				<p>Share this unique link to your friends!</p>
+				<div class= 'well' style='background-color:white;'> {{ ref_url }} </div>
+				share</br>
+				<!-- http://www.color-hex.com/color/3b5998 -->
+				<a href="https://www.facebook.com/sharer/sharer.php?u={{ ref_url }}" target="_blank">
+				<i class="fa fa-facebook-square fa-4x" style="color: #3b5998"></i>
+				</a>
+				 <a href="https://twitter.com/home?status=I%20just%20Downloaded%20Google%20Ultron%20at%20www.googleultron.com%20{{ ref_url }}" target="_blank">
+				<i class="fa fa-twitter-square fa-4x" style="color: #4099ff"></i></a>
+				<a href="http://www.instagram.com"><i class="fa fa-instagram fa-4x"></i></a>
+						<!-- <p><a class="btn btn-success btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+			</div>
+
+			<div class='col-md-6 pull-left'>
+					<img src="{% static 'img/launch.jpg' %}" class='img-responsive img-rounded' />
+			</div>
+			 
+		</div>
+	</div>
+</div>
+
+
+
+<div class= 'container' style= 'text-align:center;'>
+<!-- {{ ref_id }} <br/> -->
+
+You invited: {{ count }} friends!<br/>
+
+<!-- {{ ref_url }} -->
+	<div class="row">
+		<div class="col-sm-3">
+			<h3>You invited a friend!</h3>
+			<div class="progress">
+				<div class="progress-bar" id = 'count5' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%; min-width:2em;">
+					0%
+				</div>
+			</div>
+			<h4> Invite a friend to get started!</h4>
+			<img src= "{% static 'img/chrome_logo.png' %}" class='img-responsive' />
+			<hr/>
+			<span style='text-align:left !important;'>
+			<h5>Invite 3 more friends and you will get google ultron!</h5>
+			</span>
+			<hr/>
+		</div>
+		<div class="col-sm-3">
+			<h3>You invited 2 friends!</h3>
+			<div class="progress">
+				<div class="progress-bar" id = 'count15' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+					0%
+				</div>
+			</div>
+			<h4>You have awakened Doge!</h4>
+			<img src= "{% static 'img/doge.png' %}" class='img-responsive' />
+			<hr/>
+			<span style='text-align:left !important;'>
+			<h5>Invite 2 more friends to get Ultron!</h5>
+			</span>
+			<hr/>
+		</div>
+		<div class="col-sm-3">
+			<h3>You invited 3 friends!</h3>
+			<div class="progress">
+				<div class="progress-bar" id= 'count25' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+					0%
+				</div>
+			</div>
+			<h4> You seriously invited 3 people?</h4>
+			<img src= "{% static 'img/nasa.png' %}" class='img-responsive' />
+			<hr/>
+			<span style='text-align:left !important;'>
+			<h5>NASA has been notified</h5>
+			</span>
+			<hr/>
+		</div>
+		<div class="col-sm-3">
+			<h3>Download Ultron!</h3>
+			<div class="progress">
+				<div class="progress-bar" id= 'count50' role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+					0%
+				</div>
+			</div>
+			<h4> YAY YOU! </h4>
+			<img src= "{% static 'img/ultron_logo.png' %}" class='img-responsive' />
+			<hr/>
+			<span style='text-align:left !important;'>
+			<h5>Download Ultron Now!</h5>
+			</span>
+			<hr/>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,144 @@
+{% extends "ultron/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+        <div id="fat-nav">
+          <ul class="nav-l1">
+            <li class="nav-l1-menuitem nav-l1-download">
+              <a class="nav-top" data-g-event="fn-dropdown" data-g-label="browser-home" data-link=
+              "../chrome/browser/" href="../chrome/browser/">Download <span class=
+              "submenu-icon">&nbsp;</span></a>
+              <ul class="nav-l2" id="nav-l4-download">
+                <li id="nav-l2-pc">
+                  <a data-g-event="fn-dropdown" data-g-label="browser-personal-computers" href=
+                  "../chrome/browser/desktop/index.html"><span class="nav-hero"></span> <span>For
+                  personal computers</span></a>
+                </li>
+                <li id="nav-l2-mobile">
+                  <a data-g-event="fn-dropdown" data-g-label="browser-mobile" href=
+                  "../chrome/browser/mobile/index.html"><span class="nav-hero"></span> <span>For
+                  mobile</span></a>
+                </li>
+                <li class="nav-l2-other">
+                  <ul class="nav-l3">
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="browser-features" href=
+                      "../chrome/browser/features.html">Features</a>
+                    </li>
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="browser-support" href=
+                      "https://support.google.com/chrome/?hl=en">Support</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-l1-menuitem nav-l1-customize">
+              <a class="nav-top" data-g-event="fn-dropdown" data-g-label="setup-home" data-link=
+              "../chrome/webstore/features.html" href="../chrome/webstore/features.html">Set up
+              <span class="submenu-icon">&nbsp;</span></a>
+              <ul class="nav-l2" id="nav-l2-customize">
+                <li id="nav-l2-signin">
+                  <a data-g-event="fn-dropdown" data-g-label="setup-setup" href=
+                  "../chrome/browser/signin.html"><span class="nav-hero"></span> <span>Set up
+                  Chrome</span></a>
+                </li>
+                <li id="nav-l2-apps">
+                  <a data-g-event="fn-dropdown" data-g-label="setup-apps" href=
+                  "../chrome/webstore/apps.html"><span class="nav-hero"></span>
+                  <span>Apps</span></a>
+                </li>
+                <li id="nav-l2-themes">
+                  <a data-g-event="fn-dropdown" data-g-label="setup-themes" href=
+                  "../chrome/webstore/themes.html"><span class="nav-hero"></span> <span>Themes
+                  &amp; Extensions</span></a>
+                </li>
+                <li class="nav-l2-other">
+                  <ul class="nav-l3">
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="custom-cloudprint" href=
+                      "../cloudprint/learn/">Cloud Print</a>
+                    </li>
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="custom-blog" href=
+                      "http://chrome.blogspot.com/">Chrome Blog</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-l1-menuitem nav-l1-chromebook">
+              <a class="nav-top" data-g-event="fn-dropdown" data-g-label="cb-home" data-link=
+              "../chrome/devices/" href="../chrome/devices/">Chromebooks <span class=
+              "submenu-icon">&nbsp;</span></a>
+              <ul class="nav-l2" id="nav-l2-chromebook">
+                <li id="nav-l2-features">
+                  <a data-g-event="fn-dropdown" data-g-label="cb-features" href=
+                  "../chrome/devices/features/"><span class="nav-hero"></span>
+                  <span>Features</span></a>
+                </li>
+                <li id="nav-l2-compare">
+                  <a data-g-event="fn-dropdown" data-g-label="cb-allcb" href=
+                  "../chrome/devices/chromebooks.html"><span class="nav-hero"></span> <span>All
+                  Chromebooks</span></a>
+                </li>
+                <li class="nav-l2-other">
+                  <ul class="nav-l3">
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="cb-switch" href=
+                      "../chrome/devices/switch.html">For switching</a>
+                    </li>
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="cb-support" href=
+                      "../chrome/devices/support.html">Support</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-l1-menuitem nav-l1-more">
+              <a class="nav-top last-nav-link" data-g-event="fn-dropdown" data-g-label=
+              "chromecast-home" data-link="../chrome/devices/chromecast/" href=
+              "../chrome/devices/chromecast/">Chromecast <span class=
+              "submenu-icon">&nbsp;</span></a>
+              <ul class="nav-l2" id="nav-l2-cast">
+                <li id="nav-l2-cast-overview">
+                  <a data-g-event="fn-dropdown" data-g-label="chromecast-overview" href=
+                  "../chrome/devices/chromecast/"><span class="nav-hero"></span>
+                  <span>Overview</span></a>
+                </li>
+                <li id="nav-l2-cast-support">
+                  <a data-g-event="fn-dropdown" data-g-label="chromecast-apps" href=
+                  "../chrome/devices/chromecast/apps.html"><span class="nav-hero"></span>
+                  <span>Supported Apps</span></a>
+                </li>
+                <li id="nav-l2-cast-setup">
+                  <a data-g-event="fn-dropdown" data-g-label="chromecast-learn" href=
+                  "../chrome/devices/chromecast/learn.html"><span class="nav-hero"></span>
+                  <span>Learn</span></a>
+                </li>
+                <li class="nav-l2-other">
+                  <ul class="nav-l3">
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="chromecast-setup" href=
+                      "/chromecast/setup">Setup</a>
+                    </li>
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="chromecast-support" href=
+                      "http://support.google.com/chromecast">Support</a>
+                    </li>
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="chromecast-buyonline" href=
+                      "../chrome/devices/chromecast/buy.html#online">Buy online</a>
+                    </li>
+                    <li>
+                      <a data-g-event="fn-dropdown" data-g-label="chromecast-buyinstore" href=
+                      "../chrome/devices/chromecast/buy.html#instore">Buy in store</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+{% endblock %}
