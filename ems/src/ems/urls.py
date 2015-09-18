@@ -25,8 +25,8 @@ from dashing.utils import router
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^landing$', 'front.views.landing',name='landing'),
-    url(r'^$', 'front.views.home',name='home'),
+    url(r'^$', 'front.views.landing',name='home'),
+    url(r'^landing$', 'front.views.home',name='landing'),
     url(r'^accounts', include('registration.backends.default.urls')),
     url(r'^dashboard', include(router.urls)),
 ]
