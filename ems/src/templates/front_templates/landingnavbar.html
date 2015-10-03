@@ -46,13 +46,22 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <!-- <li><a href="{% url 'dashboard' %}">dashboard</a></li> -->
+
+
             <li>
               <div class="navbar-combine">
-              <a href="{% url 'dashboard' %}"><i class="fa fa-dashboard fa-lg"></i><p>Dashboard</p></a>
-            </div>
+                <a href="{% url 'about' %}"><i class="fa fa-user-md fa-lg"></i><p>About Us</p></a>
+           
+              </div>
+          </li>
+          <li>
+              <div class="navbar-combine">
+
+                <a href="{% url 'dashboard' %}"><i class="fa fa-dashboard fa-lg"></i><p>Dashboard</p></a>
+              </div>
           </li>
             {% if request.user.is_authenticated %}
-            <li><a href="{% url 'simulation' %}">simulation</a></li>
+            <li><a href="{% url 'home' %}">simulation</a></li>
             {% endif %}
           </ul>
 

@@ -12,6 +12,7 @@ body {
 }
 body {
 	padding-top: 0px !important;
+  padding-right: 0px !important;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
@@ -95,6 +96,13 @@ body {
   -moz-border-radius:    0;
   border-radius:         0;
 }
+a:hover {
+    color: black;
+    text-decoration: none
+  }
+a{
+  color: white;
+}
 /* btn ends here */   
 {% endblock %}
 </style>
@@ -107,7 +115,7 @@ body {
 <div class= "jumbotron" >
 	<div class= "container" >
 		<div class= "row">
-			<div class= "col-sm-6 text-center">
+			<div class= "col-md-6 text-center hidden-xs">
 				<img src="{% static 'img/emspng.png' %}" class=" img-fade img-center"></h1>
 			</div>
 
@@ -118,7 +126,7 @@ body {
 		        	<br/>
 		        	<h1> Emergency?</h1>
 		        	<p> Call Campus Police</p>
-			        <h3><i class="fa fa-phone-square fa-lg"></i>&nbsp;&nbsp;412.268.2323</h3>
+			        <h3><a href="tel:4122682323"><i class="fa fa-phone-square fa-lg"></a></i>&nbsp;&nbsp;412.268.2323</h3>
 			        <p>
 			        	Help is on the way.
 			        </p>
